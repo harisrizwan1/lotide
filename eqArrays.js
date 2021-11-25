@@ -7,13 +7,11 @@ const assertEqual = function(actual, expected) {
 };
 
 const eqArrays = function(one, two) {
-  let length = 0;
-  if (one.length < two.length) {
-    length = two.length;
-  } else {
-    length = one.length;
+  if (one.length !== two.length) {
+    return false;
   }
-  for (let i = 0; i < length; i++) {
+
+  for (let i = 0; i < one.length; i++) {
     if (one[i] !== two[i]) {
       return false;
     }
