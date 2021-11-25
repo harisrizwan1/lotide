@@ -3,6 +3,10 @@ const eqArrays = function(one, two) {
     return false;
   }
 
+  if (!Array.isArray(one) || !Array.isArray(two)) {
+    return false;
+  }
+
   for (let i = 0; i < one.length; i++) {
     if (one[i] !== two[i]) {
       return false;
