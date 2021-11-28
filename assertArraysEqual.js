@@ -1,19 +1,4 @@
-const eqArrays = function(one, two) {
-  if (one.length !== two.length) {
-    return false;
-  }
-
-  if (!Array.isArray(one) || !Array.isArray(two)) {
-    return false;
-  }
-
-  for (let i = 0; i < one.length; i++) {
-    if (one[i] !== two[i]) {
-      return false;
-    }
-  }
-  return true;
-};
+const eqArrays = require("./eqArrays");
 
 const assertArraysEqual = function(one, two) {
   if (eqArrays(one, two)) {
@@ -23,7 +8,9 @@ const assertArraysEqual = function(one, two) {
   }
 };
 
-assertArraysEqual([1, 2, 3], [1, 2, 3]); // => should PASS
-assertArraysEqual([1, 2, 3], [3, 2, 1]); // => false
-assertArraysEqual(["1", "2", "3"], ["1", "2", "3"]); // => true
-assertArraysEqual(["1", "2", "3"], ["1", "2", 3]); // => false
+module.exports = assertArraysEqual;
+
+// assertArraysEqual([1, 2, 3], [1, 2, 3]); // => should PASS
+// assertArraysEqual([1, 2, 3], [3, 2, 1]); // => false
+// assertArraysEqual(["1", "2", "3"], ["1", "2", "3"]); // => true
+// assertArraysEqual(["1", "2", "3"], ["1", "2", 3]); // => false

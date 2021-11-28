@@ -1,28 +1,4 @@
-const eqArrays = function(one, two) {
-  if (one.length !== two.length) {
-    return false;
-  }
-
-  if (!Array.isArray(one) || !Array.isArray(two)) {
-    return false;
-  }
-
-  for (let i = 0; i < one.length; i++) {
-    if (one[i] !== two[i]) {
-      return false;
-    }
-  }
-  return true;
-};
-
-const assertArraysEqual = function(one, two) {
-  if (eqArrays(one, two)) {
-    console.log(`👌👌👌 Assertion Passed: ${one} === ${two}`);
-  } else {
-    console.log(`🤦🤦🤦 Assertion Failed: ${one} !== ${two}`);
-  }
-};
-
+const assertArraysEqual = require("./assertArraysEqual");
 
 const map = (array, callback) => {
   const results = [];
