@@ -9,32 +9,34 @@ const assertObjectsEqual = function(actual, expected) {
   }
 };
 
-const ab = { a: "1", b: "2" };
-const ba = { b: "2", a: "1" };
-assertObjectsEqual(ab, ba); // => true
+module.exports = assertObjectsEqual;
 
-const abc = { a: "1", b: "2", c: "3" };
-assertObjectsEqual(ab, abc); // => false
+// const ab = { a: "1", b: "2" };
+// const ba = { b: "2", a: "1" };
+// assertObjectsEqual(ab, ba); // => true
 
-const cd = { c: "1", d: ["2", 3] };
-const dc = { d: ["2", 3], c: "1" };
-assertObjectsEqual(cd, dc); // => true
+// const abc = { a: "1", b: "2", c: "3" };
+// assertObjectsEqual(ab, abc); // => false
 
-const cd2 = { c: "1", d: ["2", 3, 4] };
-assertObjectsEqual(cd, cd2); // => false
+// const cd = { c: "1", d: ["2", 3] };
+// const dc = { d: ["2", 3], c: "1" };
+// assertObjectsEqual(cd, dc); // => true
 
-const check1 = {
-  name: "haris",
-  age: 20,
-  friends: ["marty", "baha", "descartes", "billy"],
-  mood: 'mint',
-};
+// const cd2 = { c: "1", d: ["2", 3, 4] };
+// assertObjectsEqual(cd, cd2); // => false
 
-const check2 = {
-  age: 20,
-  name: "haris",
-  mood: 'mint',
-  friends: ["marty", "baha", "descartes", "billy"],
-};
+// const check1 = {
+//   name: "haris",
+//   age: 20,
+//   friends: ["marty", "baha", "descartes", "billy"],
+//   mood: 'mint',
+// };
 
-assertObjectsEqual(check1, check2); // => true
+// const check2 = {
+//   age: 20,
+//   name: "haris",
+//   mood: 'mint',
+//   friends: ["marty", "baha", "descartes", "billy"],
+// };
+
+// assertObjectsEqual(check1, check2); // => true
