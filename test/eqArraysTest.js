@@ -14,4 +14,13 @@ describe("#eqArrays", () => {
   it("returns false for eqArrays(['1', '2', '3'], ['1', '2', 3])", () => {
     assert.isFalse(eqArrays(["1", "2", "3"], ["1", "2", 3]));
   });
+  it("returns true for eqArrays([[2, 3], [4]], [[2, 3], [4]])", () => {
+    assert.isTrue(eqArrays([[2, 3], [4]], [[2, 3], [4]]));
+  });
+  it("returns false for eqArrays([[2, 3], [4]], [[2, 3], [4, 5])", () => {
+    assert.isFalse(eqArrays([[2, 3], [4]], [[2, 3], [4, 5]]));
+  });
+  it("returns false for eqArrays([[2, 3], [4]], [[2, 3], 4])", () => {
+    assert.isFalse(eqArrays([[2, 3], [4]], [[2, 3], 4]));
+  });
 });

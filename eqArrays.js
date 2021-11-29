@@ -8,7 +8,11 @@ const eqArrays = function(one, two) {
   }
 
   for (let i = 0; i < one.length; i++) {
-    if (one[i] !== two[i]) {
+    if (Array.isArray(one[i])) {
+      if (!eqArrays(one[i], two[i])) {
+        return false;
+      }
+    } else if (one[i] !== two[i]) {
       return false;
     }
   }
