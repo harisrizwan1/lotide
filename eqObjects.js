@@ -13,6 +13,8 @@ const eqObjects = function(object1, object2) {
       if (!eqArrays(object1[key], object2[key])) {
         return false;
       }
+    } else if (typeof object1[key] === "object" && object1[key] !== null) {
+      return eqObjects(object1[key], object2[key]);
     } else if (object1[key] !== object2[key]) {
       return false;
     }
@@ -50,3 +52,8 @@ const eqObjects = function(object1, object2) {
 // };
 
 // console.log(eqObjects(check1, check2)); // => true
+
+// eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }); // => true
+
+// eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }); // => false
+// eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }); // => false
